@@ -2,8 +2,9 @@ role :app, %w{deploy_user@34.222.39.15}
 role :web, %w{deploy_user@34.222.39.15}
 role :db,  %w{deploy_user@34.222.39.15}
 set :ssh_options, {
-   keys: %w(C:\Users\brton\OneDrive\CocoMio\server-setup\aws-bootcamp-grad\keys\coco-build.pem),
-   forward_agent: false,
+   ## what tdo do with this if multiple workstations are involved?
+   keys: %w('~/.ssh/deploy_user_rsa'),
+   forward_agent: true,
    auth_methods: %w(publickey password)
  }
 
